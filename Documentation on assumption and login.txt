@@ -5,3 +5,4 @@ In news, user is displayed with a list of news that is stored in angular-in-memo
 is displayed with 2 buttons to either logout or add news. The same operations can be performed and on saving news the same is added to the news portal.
 Username: Admin
 Password: Admin@123
+When adding news all the fields are required

@@ -9,5 +9,5 @@
       <input type="password" formControlName="password" required />
     </div>
   </div>
-  <button type="submit" [disabled]="loginForm.pristine">Login</button>
+  <button type="submit" [disabled]="!loginForm.valid">Login</button>
 </form>

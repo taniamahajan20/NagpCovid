@@ -18,9 +18,9 @@
     </div>
     <div>
       <label for="image">Image</label>
-      <input type="file" id="avatar" (change)="onFileChange($event)" formControlName="image" required />
+      <input type="file" id="avatar" (change)="onFileChange($event)" formControlName="image" accept="image/*" required />
     </div>
   </div>
-  <button type="submit"  [disabled]="newsForm.pristine">Save</button>
+  <button type="submit"  [disabled]="!newsForm.valid">Save</button>
 </form>
 <img class="image-news"src="{{image}}" alt="COVID-19 News"  image-Height="200px" image-Width="200px"/>
