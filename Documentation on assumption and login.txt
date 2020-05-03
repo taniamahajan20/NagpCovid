@@ -1,0 +1,7 @@
+A user can navigate through Dashboard, Precautions, News and Login.
+On Dashboard the user will be displayed with the list of states. By clicking on any state the user can get the details about all the districts.
+In precautions, a user is displayed with a list of precautions to be taken for CoronaVirus.
+In news, user is displayed with a list of news that is stored in angular-in-memory-web-api. After the user logs in as Admin and password Admin@123 the news 
+is displayed with 2 buttons to either logout or add news. The same operations can be performed and on saving news the same is added to the news portal.
+Username: Admin
+Password: Admin@123
