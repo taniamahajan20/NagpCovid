@@ -1,0 +1,26 @@
+<form [formGroup]="newsForm" (ngSubmit)="onSubmit()" novalidate>
+  <div formGroupName="news">
+    <div>
+      <label for="headlines">Title</label>
+      <input formControlName="headlines" required />
+    </div>
+    <div>
+      <label for="description">Description</label>
+      <input type="text" formControlName="description" required />
+    </div>
+    <div>
+      <label for="summary">Summary</label>
+      <input type="text" formControlName="summary" required />
+    </div>
+    <div>
+      <label for="fullNews">Complete News</label>
+      <input type="text" formControlName="fullNews" required />
+    </div>
+    <div>
+      <label for="image">Image</label>
+      <input type="file" id="avatar" (change)="onFileChange($event)" formControlName="image" required />
+    </div>
+  </div>
+  <button type="submit"  [disabled]="newsForm.pristine">Save</button>
+</form>
+<img class="image-news"src="{{image}}" alt="COVID-19 News"  image-Height="200px" image-Width="200px"/>

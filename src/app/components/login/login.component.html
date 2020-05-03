@@ -1,0 +1,13 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+  <div formGroupName="user">
+    <div>
+      <label for="userName">Username</label>
+      <input formControlName="userName" required/>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" required />
+    </div>
+  </div>
+  <button type="submit" [disabled]="loginForm.pristine">Login</button>
+</form>

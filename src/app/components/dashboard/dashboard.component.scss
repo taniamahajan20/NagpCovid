@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+}
+.state {
+  cursor: pointer;
+}
+:host {
+  display: inline-block;
+  background: #ccc;
+  padding: 10px;
+  cursor: pointer;
+}
+
+:host:hover {
+  background: #ddd;
+}
+.padding {
+  padding: 10px;
+}
+.state {
+  width: 75%;
+}
+.align-state {
+  text-align: center;
+}

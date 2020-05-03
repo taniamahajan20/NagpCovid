@@ -1,0 +1,24 @@
+<div *ngIf="isAdmin">
+  <button class="padding" (click)="addNews()">Add news</button>
+  <button class="right padding" (click)="logout()">Logout</button>
+</div>
+<div *ngFor="let new of news">
+  <p-card>
+    <p-header>
+      <div style="text-align: center; font-size: 4em; font-weight: bold;">{{ new.headlines }}
+        </div>
+        <div class="image-align">
+          <img class="image-news"src="{{new.image}}" alt="COVID-19 News"  image-Height="200px" image-Width="200px"/>
+        </div>
+
+    </p-header>
+    {{ new.summary }}
+    {{ new.description }}
+    <p-footer>
+      {{ new.fullNews }}
+    </p-footer>
+  </p-card>
+</div>
+<p-dialog header="Title" [(visible)]="display">
+  <app-add-news (newsAdded)="updateNews()"></app-add-news>
+</p-dialog>

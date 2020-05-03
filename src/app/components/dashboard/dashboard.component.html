@@ -1,0 +1,53 @@
+<p-card *ngIf="totalData">
+  <span class="padding"><b>Total: </b> {{ totalData.confirmed }}</span>
+  <span class="padding"><b>Active: </b>{{ totalData.active }}</span>
+  <span class="padding"><b>Recovered: </b> {{ totalData.recovered }}</span>
+  <span class="padding"> <b>Deaths: </b> {{ totalData.deaths }}</span>
+</p-card>
+
+<p-table
+  [columns]="cols"
+  [value]="statewiseData"
+  dataKey="state"
+  sortMode="multiple"
+>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th style="width: 3em;"></th>
+      <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+        {{ col.header }}
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template
+    pTemplate="body"
+    let-rowData
+    let-expanded="expanded"
+    let-columns="columns"
+  >
+    <tr>
+      <td>
+        <a href="#" [pRowToggler]="rowData">
+          <i
+            [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
+          ></i>
+        </a>
+      </td>
+      <td *ngFor="let col of columns">
+        {{ rowData[col.field] }}
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+    <tr>
+      <td class="align-state"[attr.colspan]="columns.length + 1">
+        <div class="state">
+          <app-state-bulletin
+            [stateName]="rowData.state"
+            [districtList]="districtList"
+          ></app-state-bulletin>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
